@@ -2,7 +2,7 @@ module TrackingLink
   class Base
     include Services
 
-    SERVICES = [Fedex, UPS, USPS]
+    SERVICES = [UPS, Fedex, USPS]
 
     def self.new(tracking_number)
       service = self.detect(tracking_number)
