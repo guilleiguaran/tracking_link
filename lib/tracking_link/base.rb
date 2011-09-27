@@ -17,6 +17,7 @@ module TrackingLink
       SERVICES.each do |service|
         return service if service.detect(tracking_number)
       end
+      false
     end
   end
 end

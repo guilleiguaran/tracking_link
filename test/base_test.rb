@@ -8,7 +8,13 @@ class BaseTest < Test::Unit::TestCase
     assert_kind_of Fedex, Base.new("477179081230")
   end
 
-  def detect_the_class_of_tracking_number
-    assert Fedex, Base.detect("477179081230")
+  def test_raise_error_with_invalid_tracking_number
+    assert_raise(ArgumentError) { Base.new("1234567890") }
+  end
+
+  def test_detect_the_class_of_tracking_number
+    assert_equal Fedex, Base.detect("871371078356")
+    assert_equal UPS, Base.detect("1Z9999W99999999999")
+    assert_equal USPS, Base.detect("9101128882300879851252")
   end
 end

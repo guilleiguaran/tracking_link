@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BaseTest < Test::Unit::TestCase
+class UPSTest < Test::Unit::TestCase
   include TrackingLink
   include TrackingLink::Services
 
